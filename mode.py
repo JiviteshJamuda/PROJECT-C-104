@@ -1,6 +1,8 @@
+# Collector OP
 from collections import Counter
 import csv 
 
+# reading the csv file and storing values in variable
 with open("SOCR-HeightWeight.csv", newline="") as f:
     reader = csv.reader(f)
     data = list(reader)
@@ -12,6 +14,13 @@ for i in range(len(data)):
     dataList.append(num)
 
 count = Counter(dataList)
+
+
+# Please don't look down onto from line 24 to 45 if you want a peaceful moment just feel free to type "python mode.py" in the terminal
+
+
+
+# separting things by their occurence
 mode = {"75-85":0, "85-95":0, "95-105":0, "105-115":0, "115-125":0, "125-135":0, "135-145":0, "145-155":0, "155-165":0, "165-175":0}
 for weight,occurence in count.items() :
     if 75 < float(weight) < 85 : 
